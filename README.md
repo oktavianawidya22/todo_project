@@ -3,6 +3,9 @@
 A simple and responsive To-Do application built with **Django**.  
 Users can add, edit, complete, and delete tasks easily — designed to be clean, fast, and modern with **Dark/Light mode** support.
 
+![App Screenshot](todos/static/img/Screenshot_4.png)
+
+
 ---
 
 ## 🚀 Features
