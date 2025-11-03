@@ -1,0 +1,61 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Todo — Django</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'todos/style.css' %}">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <h1 class="brand">Todo<span class="muted"> — List Your Activity</span></h1>
+        <p class="sub">Minimal, fast, and easy to try. Your tasks will be monitor everyday!</p>
+      </div>
+      <div class="controls">
+         <button id="themeToggle" class="btn ghost">🌙</button> <!-- ✅ toggle button -->
+        <button id="exportBtn" class="btn ghost">Export JSON</button>
+        <label class="btn upload">
+          Import
+          <input id="importFile" type="file" accept="application/JSON" hidden>
+        </label>
+      </div>
+    </header>
+
+    <section class="new-todo">
+      <input id="newTodo" class="input" placeholder="What needs to be done?" />
+      <button id="addBtn" class="btn primary">Add</button>
+    </section>
+
+    <section id="listWrap" class="list-wrap">
+      <ul id="todoList" class="todo-list"></ul>
+      <div id="emptyState" class="empty">No todos yet — add your first task ✨</div>
+    </section>
+
+    <!-- <footer class="footer">
+      <span>Lightweight demo • Saves to <code>/data/todos.json</code> (dev only)</span>
+      <small class="muted">Tip: uncheck "CSRF exempt" if you want real CSRF protection — this UI already sends token.</small>
+    </footer> -->
+  </main>
+
+  <script src="{% static 'todos/app.js' %}"></script>
+   <script>
+    // Simple theme toggle logic
+    const themeBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') document.body.classList.add('light');
+    themeBtn.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
+
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      const isLight = document.body.classList.contains('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      themeBtn.textContent = isLight ? '🌞' : '🌙';
+    });
+  </script>
+</body>
+</html>

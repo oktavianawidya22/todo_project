@@ -1,0 +1,176 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#6ee7b7;
+  --accent-2:#60a5fa;
+  --glass: rgba(255,255,255,0.03);
+  --radius:14px;
+  --gap:14px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#071022 0%, #071427 60%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* container */
+.container{
+  max-width:920px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* header */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+.brand{margin:0;font-weight:700;font-size:24px}
+.muted{color:var(--muted);font-weight:500;font-size:13px;margin-left:6px}
+.sub{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+/* controls */
+.controls{display:flex;gap:8px;align-items:center}
+.btn{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.04);
+  color:inherit;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s;
+  font-weight:600;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.03)}
+.btn.primary{background:linear-gradient(90deg,var(--accent) 0%, var(--accent-2) 100%); color:#022; border:none}
+
+/* new todo */
+.new-todo{display:flex;gap:12px;margin-top:8px}
+.input{
+  flex:1;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:10px 12px;
+  border-radius:12px;
+  color:inherit;
+  outline:none;
+  transition:box-shadow .12s, transform .12s;
+}
+.input:focus{box-shadow:0 8px 30px rgba(2,6,23,0.6); transform:translateY(-2px)}
+
+/* list */
+.list-wrap{
+  margin-top:10px;
+  min-height:180px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:16px;
+  border:1px solid rgba(255,255,255,0.02);
+}
+.todo-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.todo-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px;
+  background:rgba(255,255,255,0.02);
+  border-radius:10px;
+  transition:transform .12s ease, box-shadow .12s;
+  border:1px solid rgba(140, 121, 121, 0.02);
+}
+.todo-item:hover{transform:translateY(-4px); box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.todo-title{flex:1;font-weight:600}
+.todo-title.done{opacity:0.6;text-decoration:line-through;font-weight:500}
+.small-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;padding:6px;border-radius:8px}
+.small-btn:hover{background:rgba(255,255,255,0.02);color:#fff}
+
+/* checkbox style */
+.checkbox{
+  width:20px;
+  height:20px;
+  border-radius:6px;
+  border:1px solid rgba(95, 87, 87, 0.871);
+  display:inline-grid;
+  place-items:center;
+  cursor:pointer;
+}
+.checkbox.checked{background:linear-gradient(90deg,var(--accent) 0%, var(--accent-2) 100%);border:none;color:#022}
+
+/* empty state */
+.empty{padding:28px;text-align:center;color:var(--muted);font-weight:600}
+
+/* footer */
+.footer{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:6px;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* responsiveness */
+@media (max-width:720px){
+  .header{flex-direction:column;align-items:flex-start}
+  .controls{width:100%;justify-content:flex-start}
+  .new-todo{flex-direction:column}
+  .btn{width:100%}
+}
+
+/* === LIGHT MODE === */
+body.light {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #64748b;
+  --text: #0f172a;
+  --accent: #3b82f6;
+  --accent-2: #22d3ee;
+  background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+  color: var(--text);
+}
+
+body.light .todo-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+body.light .btn {
+  border: 1px solid #cbd5e1;
+  color: var(--text);
+}
+
+body.light .btn.primary {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  border: none;
+}
+
+body.light .input {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: var(--text);
+}
+
+body.light .checkbox {
+  border: 1px solid #cbd5e1;
+}
+
+body.light .checkbox.checked {
+  color: white;
+}
+
+body.light .empty {
+  color: var(--muted);
+}
+
+body.light .brand span.muted,
+body.light .sub,
+body.light .footer,
+body.light .muted {
+  color: #64748b;
+}
