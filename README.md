@@ -47,20 +47,21 @@ Users can add, edit, complete, and delete tasks easily — designed to be clean,
     http://127.0.0.1:8000/
     
 ## 📁 Folder Structure
-todo-app/
-│
-├── todo/                 # Main app folder
-│   ├── templates/        # HTML templates
-│   ├── static/           # CSS, JS, images
-│   └── views.py          # Main logic
-│
-├── todo_project/         # Django project settings
-│   ├── settings.py
-│   └── urls.py
-│
-├── db.sqlite3            # Database (auto-generated)
-├── manage.py
-└── README.md
+    
+    todo-app/
+    │
+    ├── todo/                 # Main app folder
+    │   ├── templates/        # HTML templates
+    │   ├── static/           # CSS, JS, images
+    │   └── views.py          # Main logic
+    │
+    ├── todo_project/         # Django project settings
+    │   ├── settings.py
+    │   └── urls.py
+    │
+    ├── db.sqlite3            # Database (auto-generated)
+    ├── manage.py
+    └── README.md
 
 ## 🌗 Dark/Light Mode
 The app includes a toggle for dark and light mode using CSS and JavaScript.
