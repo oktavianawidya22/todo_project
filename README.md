@@ -7,6 +7,11 @@ Users can add, edit, complete, and delete tasks easily — designed to be clean,
 
 
 ---
+## 🚀 Update Features
+### Date: 4/11/2025
+- Add Export PDF 
+- Add Header PDF 
+- Remove feature Export Json & Import
 
 ## 🚀 Features
 - Add, edit, and delete tasks  
